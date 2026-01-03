@@ -1,24 +1,31 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
+import Products from './pages/Products'
+import ProductsDetail from './pages/ProductsDetail'
 import './App.css'
-import { BrowserRouter } from 'react-router-dom'
+
 
 function App() {
   return (
     <>
-      <div className='Layout'>
-        <Header />
-        <BrowserRouter>
+    <Header />
+      <BrowserRouter>
+        <div className='Layout'>
           <NavBar />
           <main>
-            <Home />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/products' element={<Products />} />
+              <Route path='/products/:id' element={<ProductsDetail />} />
+            </Routes>
           </main>
-        </BrowserRouter>
-        <Footer />
-      </div>
+        </div>
+      </BrowserRouter>
+      <Footer />
     </>
   )
 }

@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { getProducts, type Product } from "../data/DummyJSON";
-
 import "./Home.css";
 
 import Carrusel1 from "../images/Carrusel-1.jpg"
 import Carrusel2 from "../images/Carrusel-2.jpg"
 import Carrusel3 from "../images/Carrusel-3.jpg"
-import ProductCard from "../components/ProductCard";
-import Filter from "../components/Filter";
+
+import HomeImage1 from "../images/Home-image1.jpg"
+import HomeImage2 from "../images/Home-image2.webp"
+import HomeImage3 from "../images/Home-image3.webp"
+import HomeImage4 from "../images/Home-image2.webp"
 
 type Slide = {
   image: string;
@@ -19,32 +20,25 @@ type Slide = {
   ctaTo: string;
 };
 
-const FASHION_CATEGORIES = new Set([
-  "mens-shirts",
-  "womens-dresses",
-  "tops",
-  "mens-shoes",
-  "womens-shoes",
-  "womens-bags",
-  "mens-watches",
-  "womens-jewellery",
-  "womens-watches"
-]);
+const HomeImage = [
+  {
+    src: HomeImage1,
+    alt: "Hombre con chaqueta urbana negra",
+  },
+  {
+    src: HomeImage2,
+    alt: "Outfit streetwear temporada otoño",
+  },
+  {
+    src: HomeImage3,
+    alt: "Moda urbana femenina",
+  },
+  {
+    src: HomeImage4,
+    alt: "Detalles de prendas de temporada",
+  },
+];
 
-const CATEGORY_OPTIONS = [
-  { label: "all", value: "all" },
-  { label: "Mens Shirts", value: "mens-shirts" },
-  { label: "Womens Dresses", value: "womens-dresses" },
-  { label: "Tops", value: "tops" },
-  { label: "Mens Shoes", value: "mens-shoes" },
-  { label: "Womens Shoes", value: "womens-shoes" },
-  { label: "Womens bags", value: "womens-bags" },
-  { label: "Mens watches", value: "mens-watches" },
-  { label: "Womens jewellery", value: "womens-jewellery" },
-  { label: "Mens watches", value: "womens-watches" },
-] as const;
-
-type CategoryValue = typeof CATEGORY_OPTIONS[number]["value"];
 
 export default function Home() {
 
@@ -96,42 +90,6 @@ export default function Home() {
 
   const current = slides[index];
 
-  // PRODUCTOS --------------------------------------------------------------------
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-
-    getProducts()
-      .then((data) => {
-        console.log("TOTAL:", data.length);
-        console.log("CATEGORIES:", [...new Set(data.map(p => p.category))]);
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("No se han podido cargar los productos.");
-        setLoading(false);
-      });
-  }, []);
-
-  const fashionProducts = useMemo(() => {
-    return products.filter((p) => FASHION_CATEGORIES.has(p.category));
-  }, [products]);
-
-  // FILTROS --------------------------------------------------------------------
-  const [category, setCategory] = useState<CategoryValue>("all");
-
-  const filteredProducts = useMemo(() => {
-    if (category === "all") return fashionProducts;
-    return fashionProducts.filter((p) => p.category === category);
-  }, [fashionProducts, category]);
-
-
-
   return (
     <main>
       <section
@@ -177,24 +135,14 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="filters" style={{ padding: 20 }}>
-        <Filter
-          label="Categoría:"
-          value={category}
-          options={CATEGORY_OPTIONS}
-          onChange={setCategory}
-        />
+      <section className="home_images">
+        {HomeImage.map((img, index) => (
+          <div key={index} className="home_image">
+            <img src={img.src} alt={img.alt} />
+          </div>
+        ))}
       </section>
-      {loading && <p style={{ padding: 20 }}>Cargando...</p>}
-      {error && <p style={{ padding: 20 }}>{error}</p>}
 
-      {!loading && !error && (
-        <section className="products">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </section>
-      )}
     </main>
   );
 }

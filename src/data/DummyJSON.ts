@@ -17,6 +17,12 @@ type ProductsResponse = {
     limit: number;
 };
 
+export type Category = {
+  slug: string;
+  name: string;
+  url: string;
+};
+
 const api = axios.create({
     baseURL: "https://dummyjson.com",
     timeout: 8000,
@@ -32,12 +38,7 @@ export async function getProductById(id: number): Promise<Product> {
     return res.data;
   }
   
-  export async function getCategories(): Promise<string[]> {
-    const res = await api.get<string[]>("/products/categories");
+  export async function getCategories(): Promise<Category[]> {
+    const res = await api.get<Category[]>("/products/categories");
     return res.data;
-  }
-  
-  export async function getProductsByCategory(category: string): Promise<Product[]> {
-    const res = await api.get<ProductsResponse>(`/products/category/${category}`);
-    return res.data.products;
   }
