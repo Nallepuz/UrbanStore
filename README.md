@@ -1,4 +1,4 @@
-UrbanStore
+<img width="166" height="85" alt="image" src="https://github.com/user-attachments/assets/f642fbcf-90f3-4e53-bc72-965e44ca6212" />
 
 UrbanStore es una aplicación web desarrollada con **React + TypeScript** que simula una tienda de moda urbana.
 
