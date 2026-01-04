@@ -153,4 +153,3 @@ git clone https://github.com/Nallepuz/UrbanStore.git
 
 npm install
 npm run dev
-
