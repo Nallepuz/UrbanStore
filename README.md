@@ -64,12 +64,12 @@ Actualmente implementado:
 
   En la página de productos, cada producto se muestra en una tarjeta propia donde la imagen, nombre y precio estan agrupados.
 
-  ![alt text](image-1.png)
+  <img width="1249" height="701" alt="image" src="https://github.com/user-attachments/assets/b2b32ad1-7bbf-465a-8b24-dcf049976b0a" />
 
 
   Los controles de filtrado (categoría, búsqueda y ordenación) se encuentran próximos entre sí en la parte superior, lo que permite al usuario entender que forman parte de un mismo bloque de acciones.
 
-  ![alt text](image-2.png)
+  <img width="2495" height="309" alt="image" src="https://github.com/user-attachments/assets/be67cdd9-f512-4348-acc9-4b9fb85532c7" />
 
   Beneficio:
   El usuario identifica rápidamente qué información pertenece a cada producto y qué elementos están relacionados entre sí, reduciendo la carga cognitiva.
@@ -79,7 +79,7 @@ Actualmente implementado:
 
   El layput general respeta una paleta de colores consistente (fondos oscuros, texto claro y tonos de color rojo) reforzando la identidad visual de la tienda con una paleta de colores adecuada.
 
-  ![alt text](image-3.png)
+  <img width="2493" height="1302" alt="image" src="https://github.com/user-attachments/assets/dd79b809-22ba-4833-b655-230a9806d7ee" />
 
 -----------------------------------------------
 
