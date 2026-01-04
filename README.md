@@ -58,7 +58,32 @@ Actualmente implementado:
 
 -----------------------------------------------
 
-Tecnologías utilizadas
+### Aplicación de las Leyes de Gestakt en UrbanStore
+
+  1- Ley de Proximidad: Establece que los elementos que se encuentran cerca entre sí, suelen percibirse como parte de un mismo grupo.
+
+  En la página de productos, cada producto se muestra en una tarjeta propia donde la imagen, nombre y precio estan agrupados.
+
+  ![alt text](image-1.png)
+
+
+  Los controles de filtrado (categoría, búsqueda y ordenación) se encuentran próximos entre sí en la parte superior, lo que permite al usuario entender que forman parte de un mismo bloque de acciones.
+
+  ![alt text](image-2.png)
+
+  Beneficio:
+  El usuario identifica rápidamente qué información pertenece a cada producto y qué elementos están relacionados entre sí, reduciendo la carga cognitiva.
+
+
+  2- Ley de Similitud: Indica que los elementos que comparten características visuales (formas, colores, estilos) se interpretan como de un mismo grupo.
+
+  El layput general respeta una paleta de colores consistente (fondos oscuros, texto claro y tonos de color rojo) reforzando la identidad visual de la tienda con una paleta de colores adecuada.
+
+  ![alt text](image-3.png)
+
+-----------------------------------------------
+
+### Tecnologías utilizadas
 
 - React
 - TypeScript
@@ -70,7 +95,7 @@ Tecnologías utilizadas
 
 -----------------------------------------------
 
-Estructura del proyecto
+### Estructura del proyecto
 
 src/
 ├── components/
@@ -106,7 +131,7 @@ src/
 
 -----------------------------------------------
 
-## Características clave del proyecto
+### Características clave del proyecto
 
 - Arquitectura basada en **componentes reutilizables**
 - Separación clara entre:
@@ -120,7 +145,7 @@ src/
 
 -----------------------------------------------
 
-Cómo ejecutar el proyecto
+### Cómo ejecutar el proyecto
 
 1. Clonar el repositorio:
 
