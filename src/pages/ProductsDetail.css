@@ -65,6 +65,7 @@
     max-width: 60ch;
     line-height: 1.6;
     opacity: .9;
+    margin-left: 70px;
   }
   
   .detail__subtitle{
@@ -75,7 +76,7 @@
   .detail__thumbs{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+    gap: 40px;
   }
   
   .detail__thumb{

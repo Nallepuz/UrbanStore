@@ -1,34 +1,44 @@
 import { NavLink } from 'react-router-dom';
+import ThemeToggle from "./ThemeToggle";
 
-export default function NavBar() {
+type theme = "dark" | "light";
 
-    return <nav style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '40px',
-        padding: '16px 0px',
-        backgroundColor: '#1F1D20',
-        fontSize: "18px",
-        fontWeight: 500,
-        borderBottom: '2px solid #FF6F61',
-        width: '100%',
-    
-    }}
+type Props = {
+    theme: theme;
+    onToggle: () => void;
+};
+
+export default function NavBar({ theme, onToggle }: Props) {
+
+    return <nav
+        style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "40px",
+            padding: "16px 0px",
+            backgroundColor: "var(--surface-2)",
+            fontSize: "18px",
+            fontWeight: 500,
+            borderBottom: "2px solid var(--accent)",
+            width: "100%",
+        }}
     >
         <NavLink
             to="/"
             style={({ isActive }) => ({
-                color: isActive ? '#FF6F61' : '#F5ECDC',
-                textDecoration: 'none',
-            })}>
+                color: isActive ? "var(--accent)" : "var(--text)",
+                textDecoration: "none",
+              })}>
             Home
         </NavLink>
         <NavLink
             to="/products"
             style={({ isActive }) => ({
-                color: isActive ? '#FF6F61' : '#F5ECDC',
-                textDecoration: 'none',
-            })}>Products
+                color: isActive ? "var(--accent)" : "var(--text)",
+                textDecoration: "none",
+              })}>Products
         </NavLink>
+        <ThemeToggle theme={theme} onToggle={onToggle} />
     </nav >
 }

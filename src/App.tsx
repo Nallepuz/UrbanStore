@@ -7,15 +7,32 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductsDetail from './pages/ProductsDetail'
 import './App.css'
+import { useEffect, useState } from 'react'
 
+export function App() {
 
-function App() {
+  type Theme = "dark" | "light";
+
+  const [theme, setTheme] = useState<Theme>(() => {
+    const saved = localStorage.getItem("theme") as Theme | null;
+    return saved ?? "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   return (
     <>
-    <Header />
+      <Header />
       <BrowserRouter>
         <div className='Layout'>
-          <NavBar />
+          <NavBar theme={theme} onToggle={toggleTheme} />
           <main>
             <Routes>
               <Route path='/' element={<Home />} />

@@ -14,8 +14,9 @@ export default function ProductCard({ product }: Props) {
               borderRadius: "8px",
               padding: "16px",
               textAlign: "center",
-              backgroundColor: "#ffffff0f",
+              backgroundColor: "--bg",
               cursor: "pointer",
+              borderColor: "--border",
             }}
           >
             <img
@@ -25,7 +26,6 @@ export default function ProductCard({ product }: Props) {
                 width: "100%",
                 height: "180px",
                 objectFit: "contain",
-                background: "#55535305",
                 borderRadius: "10px",
               }}
             />

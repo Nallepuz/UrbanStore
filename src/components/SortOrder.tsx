@@ -15,6 +15,8 @@ export default function SortOrder({ value, onChange }: Props) {
                 borderRadius: "6px",
                 border: "1px solid #ccc",
                 width: "150px",
+                backgroundColor: "var(--surface-2)",
+                color: "var(--text)",
             }} >
             <option value="asc">Price: Low to High</option>
             <option value="desc">Price: High to Low</option>

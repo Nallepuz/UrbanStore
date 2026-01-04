@@ -15,6 +15,7 @@ export default function Search({ value, onChange }: Props) {
                 borderRadius: "6px",
                 border: "1px solid #ccc",
                 width: "250px",
+                backgroundColor: "var(--surface-2)",
             }}
         />
     );

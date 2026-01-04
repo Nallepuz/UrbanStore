@@ -18,7 +18,7 @@ export default function Filter<Filter extends string>({
 }: Props<Filter>) {
 
     return (
-        <label style={{ display: "block", marginBottom: "1rem" }}>
+        <label style={{ display: "block", marginBottom: "1rem", color: "var--text" }}>
             {label}{" "}
             <select value={value} onChange={(e) => onChange(e.target.value as Filter)}>
                 {options.map((opt) => (
